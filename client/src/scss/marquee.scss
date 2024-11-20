@@ -1,0 +1,94 @@
+@use '../index.scss' as *;
+
+.marquee {
+    position: relative;
+    width: 90%;
+    max-width: 1536px;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    margin-inline: auto;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+    );
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 2;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, $body-color, transparent);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, $body-color, transparent);
+    }
+
+    &-section {
+        max-width: 1680px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0 auto;
+        padding-top: 2rem;
+    }
+
+    &-content {
+        display: flex;
+        animation: scrolling 30s linear infinite;
+    }
+
+    &-item {
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        left: max(calc(200px * 8), 100%);
+        transition: all 0.3s ease;
+        animation: scrolling 30s linear infinite;
+
+        i {
+            font-size: 4.5rem;
+            padding: 0.8rem 1rem;
+            color: $text-color;
+            transition: all 0.3s ease; 
+            
+            &:hover {
+                color: var(--logo-hover-color);
+            }
+        }
+        &:hover {
+            color: var(--logo-hover-color);
+        }
+    }
+}
+
+@keyframes scrolling {
+    to {
+        left: -200px;
+    }
+}
+
+// Loops from item1 to item10
+@for $i from 1 through 10 {
+    .item#{$i} {
+        animation-delay: calc(30s / 10 * (10 - #{$i}) * -1);
+    }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+    .marquee-item {
+        width: 150px;
+        margin: 0 0.5rem;
+    }
+}

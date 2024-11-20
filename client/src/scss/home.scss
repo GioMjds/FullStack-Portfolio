@@ -1,0 +1,116 @@
+@use '../index.scss' as *;
+
+.home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &-marquee-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    ~ * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.intro {
+    max-width: 540px;
+    text-align: center;
+    z-index: 1;
+}
+
+.home-img {
+    width: 148px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.5rem;
+}
+
+.home-name {
+    font-size: $h1-font-size;
+    font-weight: $font-bold;
+    margin-bottom: 0.5rem;
+}
+
+.home-socials {
+    display: flex;
+    column-gap: 3rem;
+    margin: 1.5rem 0;
+}
+
+.home-social-link {
+    color: $title-color;
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+
+    &:hover {
+        color: $hover-color;
+    }
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    width: 100%;
+}
+
+.home-scroll-name {
+    font-size: $small-font-size;
+}
+
+.mouse {
+    border: 2px solid hsl(244, 18%, 32%);
+    display: block;
+    height: 1.6rem;
+    width: 1.25rem;
+    margin: auto;
+    margin-top: .75rem;
+    border-radius: 1rem;
+    position: relative;
+}
+
+@keyframes ani-mouse {
+    0% {
+        top: 29%;
+    }
+    15% {
+        top: 50%;
+    }
+    50% {
+        top: 50%;
+    }
+    100% {
+        top: 29%;
+    }
+}
+
+.wheel {
+    background-color: $title-color;
+    border-radius: 100%;
+    width: 0.25rem;
+    height: 0.25rem;
+    position: absolute;
+    top: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: ani-mouse 2s linear infinite;
+}
+
+@media screen and (max-width: 1024px) {
+    .home {
+        position: relative;
+        bottom: 3.6rem;
+    }
+}

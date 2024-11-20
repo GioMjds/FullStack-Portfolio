@@ -1,0 +1,100 @@
+@use '../index.scss' as *;
+
+.certificate {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin: 2rem;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card {
+        background-color: $container-color;
+        border-radius: $border-radius;
+        box-shadow: $shadow;
+        padding: 1.5rem;
+        cursor: pointer;
+        
+        .certificate-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .certificate-name {
+                font-size: $h3-font-size;
+                margin-bottom: 0.625rem;
+                color: $title-color;
+            }
+
+            .certificate-issuer {
+                font-size: $small-font-size;
+                color: $text-color;
+            }
+
+            .certificate-icon {
+                font-size: 3.5rem;
+                color: $title-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: $container-color;
+    border-radius: $border-radius;
+    padding: 2rem;
+    box-shadow: $shadow;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: $h2-font-size;
+        color: $title-color;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        color: $text-color;
+    }
+
+    .modal-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-close {
+        background: $first-color;
+        color: $body-color;
+        border: none;
+        border-radius: $border-radius;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background: mix($first-color, black, 60%);
+        }
+    }
+}

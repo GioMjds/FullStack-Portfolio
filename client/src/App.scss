@@ -1,0 +1,37 @@
+@use "./index.scss" as *;
+
+body {
+  background-color: $body-color;
+  color: $text-color;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main {
+  margin-left: 110px;
+}
+
+.mobile {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tablet {
+  .about-container {
+    grid-template-columns: 3fr 5fr;
+    gap: 5rem;
+  }
+}
+
+.desktop {
+  .about-container {
+    grid-template-columns: 3fr 7fr;
+    gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    margin-left: 0;
+  }
+}

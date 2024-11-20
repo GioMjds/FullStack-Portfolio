@@ -1,0 +1,99 @@
+@use '../index.scss' as *;
+
+.resume {
+    &-container {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.875rem;
+    }
+
+    .timeline {
+        background-color: $container-color;
+        padding: 1.875rem;
+        border-radius: $border-radius;
+        position: relative;
+        box-shadow: $shadow;
+
+        &-item {
+            position: relative;
+            padding-left: 3.125rem;
+            padding-bottom: 3.125rem;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            &::before {
+                content: '';
+                width: 1px;
+                height: 100%;
+                background-color: $first-color;
+                position: absolute;
+                left: .25rem;
+                top: 0;
+            }
+        }
+
+        .icon-briefcase, .icon-graduation {
+            position: absolute;
+            left: -0.4375rem;
+            top: 0;
+            font-size: $h2-font-size;
+            color: $first-color;
+            background-color: $container-color;
+            padding: 0.4375rem 0;
+        }
+
+        &-date {
+            color: #8b88b1;
+            font-size: $small-font-size;
+        }
+
+        &-title {
+            font-size: $h2-font-size;
+            margin: 0.5rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .resume {
+        &-container {
+            grid-template-columns: 450px;
+            justify-content: center;
+            row-gap: 1.875rem;
+        }
+    }
+
+    .timeline-item {
+        &::before {
+            left: 2px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .timeline {
+        &-item {
+            padding-left: 1.875rem;
+            padding-bottom: 1.875rem;
+
+            &::before {
+                left: 0;
+            }
+        }
+
+        .icon-briefcase, .icon-graduation {
+            left: -9px;
+        }
+
+        &-text {
+            text-align: justify;
+        }
+    }
+}

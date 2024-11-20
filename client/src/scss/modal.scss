@@ -1,0 +1,68 @@
+@use '../index.scss' as *;
+
+.modal-content {
+    background: $container-color;
+    border-radius: $border-radius;
+    padding: 2rem;
+    box-shadow: $shadow;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: $h2-font-size;
+        color: $title-color;
+    }
+
+    .modal-skills {
+        font-size: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        color: $text-color;
+    }
+
+    .modal-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-buttons {
+        display: flex;
+        justify-content: space-evenly;
+
+        .modal-link {
+            background: $hover-color;
+            color: $title-color;
+            border: none;
+            border-radius: $border-radius;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background: mix($hover-color, black, 80%);
+            }
+        }
+
+        .modal-close {
+            background: $first-color;
+            color: $body-color;
+            border: none;
+            border-radius: $border-radius;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+    
+            &:hover {
+                background: mix($first-color, black, 60%);
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use '../index.scss' as *;
+
+.services {
+    &-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.875rem;
+    }
+
+    &-card {
+        text-align: center;
+        padding: 1.875rem;
+        border-radius: $border-radius;
+        background-color: $container-color;
+
+        &:nth-child(1) {
+            background-color: hsl(240, 70%, 66%);
+            box-shadow: 0 5px 20px 0 hsla(240, 70%, 66%, 0.2);
+        }
+
+        &:nth-child(2) {
+            background-color: hsl(48, 94%, 64%);
+            box-shadow: 0 5px 20px 0 hsla(48, 94%, 64%, 0.2);
+        }
+
+        &:nth-child(3) {
+            background-color: hsl(352, 91%, 73%);
+            box-shadow: 0 5px 20px 0 hsla(352, 91%, 73%, 0.2);
+        }
+
+        i {
+            font-size: 2rem;
+            color: hsl(0, 3%, 8%);
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    &-title {
+        font-size: $h3-font-size;
+        margin-bottom: 1rem;
+        color: hsl(0, 0%, 100%);
+    }
+
+    &-description {
+        color: hsl(210, 17%, 98%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: 330px;
+        justify-content: center;
+        row-gap: 1.875rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 310px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}

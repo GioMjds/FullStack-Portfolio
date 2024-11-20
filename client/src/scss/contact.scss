@@ -1,0 +1,95 @@
+@use '../index.scss' as *;
+
+.contact {
+    &.section {
+        padding-bottom: 6.25rem;
+    }
+
+    &-container {
+        grid-template-columns: 4fr 8fr;
+        column-gap: 1.875rem;
+    }
+
+    &-title {
+        font-size: $h3-font-size;
+        margin-bottom: 0.5rem;
+    }
+
+    &-form {
+        &-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1.5rem;
+        }
+
+        &-div {
+            position: relative;
+            margin-bottom: 1.875rem;
+            height: 3.75rem;
+
+            textarea {
+                height: 10.25rem;
+            }
+        }
+
+        &-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: $shadow;
+            background-color: $container-color;
+            color: $text-color;
+            border: none;
+            outline: none;
+            border-radius: 1.875rem;
+            padding: 0.625rem 1.875rem;
+        }
+
+        .btn {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background: none;
+            color: $first-color;
+            font-size: 24px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            transition: all 0.3s;
+            margin-top: 6.875rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contact {
+        &-container {
+            grid-template-columns: 300px 360px;
+            justify-content: center;
+        }
+
+        &-form {
+            &-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 310px;
+        row-gap: 1.875rem;
+    }
+    .contact-info {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}

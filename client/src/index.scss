@@ -1,0 +1,219 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+/* Reusable Variables */
+
+/* Colors */
+$first-color: hsl(353, 100%, 65%);
+$title-color: hsl(244, 24%, 26%);
+$text-color: hsl(244, 16%, 43%);
+$body-color: hsl(258, 60%, 98%);
+$container-color: hsl(0, 0%, 100%);
+$hover-color: hsl(43, 100%, 68%);
+
+/* Font and Typography */
+$body-font: "Rubik", sans-serif;
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+$normal-font-size: 1rem;
+$small-font-size: 0.875rem;
+$smaller-font-size: 0.813rem;
+
+/* Font Weight */
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+/* Box Shadow */
+$shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
+
+/* Border Radius */
+$border-radius: 20px;
+
+/* Other Class in Other Components affected in Dark Mode */
+.copyright,
+.home-scroll-name,
+.contact-form-input::placeholder {
+  color: $text-color;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1024px) {
+  $h1-font-size: 1.75rem;
+  $h2-font-size: 1.25rem;
+  $h3-font-size: 1rem;
+  $normal-font-size: 0.938rem;
+  $small-font-size: 0.813rem;
+  $smaller-font-size: 0.75rem;
+}
+
+/* Customized Scroll Bars */
+::-webkit-scrollbar {
+  width: 8px;
+
+  &-track {
+    background-color: $container-color;
+  }
+
+  &-thumb {
+    background-color: $first-color;
+    border-radius: 10px;
+
+    &-hover {
+      background-color: $hover-color;
+    }
+  }
+}
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $body-color;
+  line-height: 1.7;
+  color: $text-color;
+  font-family: $body-font;
+  font-size: $normal-font-size;
+}
+
+button,
+input,
+textarea {
+  font-family: $body-font;
+  font-size: $normal-font-size;
+}
+
+h1,
+h2,
+h3 {
+  color: $title-color;
+  font-weight: $font-semibold;
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Reusable CSS Classes */
+.container {
+  max-width: 1080px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.section {
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+
+  &-title {
+    font-size: $h1-font-size;
+    margin-left: 0.875rem;
+    font-weight: $font-bold;
+    position: relative;
+    margin-bottom: 3.75rem;
+    &::before {
+      content: "";
+      background: url(./assets/dots-bg.svg);
+      height: 2.25rem;
+      width: 2.25rem;
+      position: absolute;
+      left: -0.875rem;
+      top: -0.875rem;
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: $first-color;
+  font-size: 24px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: all 0.3s;
+
+  &::after,
+  &::before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid hsl(0, 0%, 100%);
+    transition: all 0.7s;
+  }
+
+  &::after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid $title-color;
+    border-left: 5px solid $title-color;
+  }
+
+  &::before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid $title-color;
+    border-right: 5px solid $title-color;
+  }
+
+  &:hover {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::before,
+    &::after {
+      width: 105%;
+      height: 115%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+
+    &-thumb {
+      background-color: $first-color;
+      border-radius: 5px;
+    }
+  }
+
+  .section-title {
+    position: relative;
+    display: flex;
+    left: 1.875rem;
+    margin-bottom: 2rem;
+  }
+}
