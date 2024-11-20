@@ -1,0 +1,65 @@
+@use '../index.scss' as *;
+
+.testimonials {
+    background-color: $body-color;
+    padding: 1rem 0;
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 1rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .testimonial-item {
+        background-color: $container-color;
+        border-radius: $border-radius;
+        box-shadow: $shadow;
+        padding: 1.5rem;
+        text-align: left;
+
+        .testimonial-content {
+            display: flex;
+            align-items: center;
+
+            .testimonial-image {
+                width: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin: 1rem 0.5rem;
+            }
+
+            .testimonial-text-container {
+                p {
+                    font-size: $normal-font-size;
+            
+                    &::before {
+                        content: '" ';
+                        font-size: $h3-font-size;
+                        color: $title-color;
+                    }
+            
+                    &::after {
+                        content: ' "';
+                        font-size: $h3-font-size;
+                        color: $title-color;
+                    }
+                }
+            
+                h4 {
+                    font-size: $normal-font-size;
+                    font-weight: $font-semibold;
+                    color: $title-color;
+                }
+            }
+        }
+    }
+}

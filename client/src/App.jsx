@@ -10,6 +10,7 @@ import Resume from "./sections/Resume"
 import Portfolio from "./sections/Portfolio"
 import Contact from "./sections/Contact"
 import Certificates from "./sections/Certificates"
+import Testimonials from "./sections/Testimonials"
 
 const App = () => {
   AOS.init({
@@ -31,6 +32,7 @@ const App = () => {
         <Resume id="resume" />
         <Certificates id="certificates" />
         <Portfolio id="portfolio" />
+        <Testimonials id="testimonials" />
         <Contact id="contact" />
       </main>
     </BrowserRouter>

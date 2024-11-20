@@ -59,6 +59,11 @@ const Sidebar = () => {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink to="/testimonials" className="nav-link" onClick={() => handleNav('testimonials')}>
+                                    <i className="icon-people"></i>
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <NavLink to="/contact" className="nav-link" onClick={() => handleNav('contact')}>
                                     <i className="icon-bubble"></i>
                                 </NavLink>

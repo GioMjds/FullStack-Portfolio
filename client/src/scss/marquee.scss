@@ -78,10 +78,10 @@
     }
 }
 
-// Loops from item1 to item10
-@for $i from 1 through 10 {
+// Loops from item1 to item9
+@for $i from 1 through 9 {
     .item#{$i} {
-        animation-delay: calc(30s / 10 * (10 - #{$i}) * -1);
+        animation-delay: calc(30s / 9 * (9 - #{$i}) * -1);
     }
 }
 
